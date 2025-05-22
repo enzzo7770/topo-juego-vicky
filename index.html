@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego del Topo - Versión Amiga</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="menuInicio" class="menu">
+    <h1>¡Golpea a Luciana!</h1>
+
+    <label for="dificultad">Dificultad:</label>
+    <select id="dificultad">
+      <option value="1500">Fácil</option>
+      <option value="1000">Normal</option>
+      <option value="600">Difícil</option>
+    </select>
+
+    <label for="modo">Modo de juego:</label> <!-- Cambiado de modoJuego a modo -->
+    <select id="modo">
+      <option value="tiempo">30 segundos</option>
+      <option value="infinito">Infinito</option>
+    </select>
+
+    <div>
+      <span>⏱️ Tiempo: <span id="tiempo">30</span>s</span>
+      <span>❤️ Vidas: <span id="vidas">3</span></span>
+    </div>
+
+    <br><br>
+
+    <label for="volumen">Volumen:</label>
+    <input type="range" id="volumen" min="0" max="1" step="0.01" value="0.5">
+
+    <br><br>
+
+    <button onclick="iniciarJuego()">¡Jugar!</button>
+  </div>
+
+  <!-- Música de fondo -->
+  <audio id="musicaFondo" src="musica.mp3" loop></audio>
+  <audio id="sonidoGolpe" src="sonido.mp3" preload="auto"></audio>
+
+  <h1>¡Golpea a Luciana!</h1>
+  <p>
+  Puntaje: <span id="score">0</span> |
+  Tiempo restante: <span id="tiempoJuego">30</span>s
+</p>
+
+
+  <div class="game">
+    <div class="hole"><img class="amiga" src="amiga.jpg" /></div>
+    <div class="hole"><img class="amiga" src="amiga.jpg" /></div>
+    <div class="hole"><img class="amiga" src="amiga.jpg" /></div>
+    <div class="hole"><img class="amiga" src="amiga.jpg" /></div>
+    <div class="hole"><img class="amiga" src="amiga.jpg" /></div>
+    <div class="hole"><img class="amiga" src="amiga.jpg" /></div>
+    <div class="hole"><img class="amiga" src="amiga.jpg" /></div>
+    <div class="hole"><img class="amiga" src="amiga.jpg" /></div>
+    <div class="hole"><img class="amiga" src="amiga.jpg" /></div>
+  </div>
+
+  <!-- Martillo que sigue el mouse -->
+  <img src="martillo.png" id="martillo" alt="Martillo" />
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
